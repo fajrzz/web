@@ -1,0 +1,136 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Pendaftaran Calon Anggota</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            flex-direction: column;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        #home, #formContainer, #thankYouContainer {
+            display: none;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #5cb85c;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #4cae4c;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+    <script>
+        function showForm() {
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('formContainer').style.display = 'block';
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            document.getElementById('formContainer').style.display = 'none';
+            document.getElementById('thankYouContainer').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div id="home" class="container">
+        <h1>Selamat Datang!</h1>
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/3b/SpongeBob_SquarePants_character.svg" alt="SpongeBob">
+        <a href="javascript:void(0)" class="btn" onclick="showForm()">Daftar Sekarang</a>
+    </div>
+    <div id="formContainer" class="container">
+        <h2>Formulir Pendaftaran Calon Anggota</h2>
+        <form onsubmit="submitForm(event)">
+            <div class="form-group">
+                <label for="fullname">Nama Lengkap</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Nomor Telepon</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Tanggal Lahir</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Jenis Kelamin</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Pilih...</option>
+                    <option value="male">Laki-laki</option>
+                    <option value="female">Perempuan</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit">Daftar</button>
+            </div>
+        </form>
+    </div>
+    <div id="thankYouContainer" class="container">
+        <h2>Terima kasih telah mendaftarkan diri Anda, semoga sukses!</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Emojione_1F60A.svg/1024px-Emojione_1F60A.svg.png" alt="Smiling Emoji" style="width: 100px;">
+    </div>
+    <script>
+        // Menampilkan halaman utama pada awalnya
+        document.getElementById('home').style.display = 'block';
+    </script>
+</body>
+</html>
