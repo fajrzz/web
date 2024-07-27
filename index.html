@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tembak Pacar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe6e6;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #ff4d4d;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+        .button {
+            padding: 15px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        .yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .no {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Puisi Cinta</h1>
+    <p>
+        Cinta adalah indah<br>
+        Hatiku hanya untukmu<br>
+        Maukah kamu menjadi pacarku?
+    </p>
+    <form id="responseForm" method="post" action="thanks.php">
+        <input type="hidden" name="response" id="response">
+        <button type="button" class="button yes" onclick="submitResponse('yes')">Yes</button>
+        <button type="button" class="button no" onclick="submitResponse('no')">No</button>
+    </form>
+
+    <script>
+        function submitResponse(response) {
+            document.getElementById('response').value = response;
+            document.getElementById('responseForm').submit();
+        }
+    </script>
+</body>
+</html>
